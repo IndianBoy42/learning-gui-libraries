@@ -10,16 +10,15 @@ set(CMAKE_CXX_EXTENSIONS ON)
 set(CMAKE_C_EXTENSIONS ON)
 
 find_package(SFML 2 REQUIRED
-    network audio graphics window system)
+    graphics window system)
 
 add_executable(sfml main.cpp)
 target_include_directories(sfml PUBLIC ./ ${SFML_INCLUDE_PATH})
 #    target_link_libraries(sfml PUBLIC OpenMP::OpenMP_CXX)
-target_link_libraries(sfml PUBLIC ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+target_link_libraries(sfml PUBLIC sfml-graphics)
 # lots of warnings and all warnings as errors
     target_compile_options(sfml PUBLIC -march=native -mtune=native -mavx -mavx2)
     target_compile_options(sfml PUBLIC -Wall -Wuninitialized -Wextra -Wpedantic)
-    target_link_libraries(sfml PUBLIC m)
-    target_link_libraries(sfml PUBLIC stdc++ m pthread)
+    target_link_libraries(sfml PUBLIC m pthread)
 target_compile_options(sfml PUBLIC -fopenmp)
 add_custom_target(run_sfml mpirun -n 2 --oversubscribe sfml)
