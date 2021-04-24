@@ -70,4 +70,4 @@ target_compile_options(raylib_play PUBLIC -march=native -mtune=native -mavx -mav
 target_compile_options(raylib_play PUBLIC -Wall -Wuninitialized -Wextra -Wpedantic)
 target_link_libraries(raylib_play PUBLIC m pthread)
 target_compile_options(raylib_play PUBLIC -fopenmp)
-add_custom_target(run_raylib_play raylib_play)
+add_custom_target(run raylib_play)

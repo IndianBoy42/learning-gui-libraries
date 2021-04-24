@@ -28,4 +28,4 @@ target_link_libraries(blend2d_play PUBLIC m pthread)
 target_compile_options(blend2d_play PUBLIC -fopenmp)
 # qt5_use_modules(blend2d_play Widgets)
 
-add_custom_target(run_blend2d_play blend2d_play)
+add_custom_target(run blend2d_play)
