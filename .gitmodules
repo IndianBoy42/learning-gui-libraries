@@ -13,3 +13,9 @@
 [submodule "imgui/imgui-sfml"]
 	path = sfml/imgui-sfml
 	url = https://github.com/eliasdaler/imgui-sfml.git
+[submodule "raylib/imgui-impl-raylib"]
+	path = raylib/imgui-impl-raylib
+	url = https://github.com/oswjk/imgui-impl-raylib.git
+[submodule "raylib/autodiff"]
+	path = raylib/autodiff
+	url = https://github.com/autodiff/autodiff.git

@@ -1,6 +1,8 @@
 #include <algorithm>
 #include <random>
 
+#include "imgui_impl_opengl3.h"
+#include "imgui_impl_raylib.h"
 #include "raylib-cpp.hpp"
 
 void drawing(auto fn) {
@@ -34,11 +36,22 @@ int main(void) {
 	raylib::Color bgColor{RAYWHITE};
 
 	SetTargetFPS(60);  // Set our game to run at 60 frames-per-second
+
+	ImGui::CreateContext();
+	ImGui::StyleColorsDark();
+
+	ImGui_ImplOpenGL3_Init();
+	ImGui_ImplRaylib_Init();
 	//--------------------------------------------------------------------------------------
 
 	// Main game loop
 	while (!window.ShouldClose())  // Detect window close button or ESC key
 	{
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplRaylib_NewFrame();
+		ImGui::NewFrame();
+		ImGui_ImplRaylib_ProcessEvent();
+
 		// Update
 		//----------------------------------------------------------------------------------
 		if (IsKeyDown(KEY_RIGHT)) ballPosition.x += 2.0f;
@@ -53,6 +66,8 @@ int main(void) {
 		drawing([&] {
 			bgColor.ClearBackground();
 
+			ImGui::ShowDemoWindow();
+
 			DrawText("move the ball with arrow keys", 10, 10, 20, DARKGRAY);
 
 			DrawCircleV(ballPosition, 50, MAROON);
@@ -64,6 +79,9 @@ int main(void) {
 				ball.DrawCircle(10, ballColor);
 				ball += {dx(eng), dx(eng)};
 			}
+
+			ImGui::Render();
+			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 		});
 
 		//----------------------------------------------------------------------------------
