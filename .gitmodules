@@ -8,7 +8,7 @@
 	path = sfml/imgui-plot
 	url = https://github.com/soulthreads/imgui-plot.git
 [submodule "imgui/imgui"]
-	path = sfml/imgui
+	path = imgui
 	url = https://github.com/ocornut/imgui.git
 [submodule "imgui/imgui-sfml"]
 	path = sfml/imgui-sfml
