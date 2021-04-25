@@ -17,7 +17,8 @@ int main(void) {
 	const int screenWidth = 800;
 	const int screenHeight = 450;
 
-	raylib::Window window(screenWidth, screenHeight, "raylib [core] example - keyboard input");
+	std::string windowTitle = "raylib [core] example - keyboard input";
+	raylib::Window window(screenWidth, screenHeight, windowTitle);
 
 	Vector2 ballPosition = {(float)screenWidth / 2, (float)screenHeight / 2};
 	static constexpr size_t N = 1000;
@@ -32,6 +33,7 @@ int main(void) {
 		return balls;
 	})();
 
+	float inputColor[3];
 	raylib::Color ballColor{SKYBLUE};
 	raylib::Color bgColor{RAYWHITE};
 
@@ -66,7 +68,26 @@ int main(void) {
 		drawing([&] {
 			bgColor.ClearBackground();
 
-			ImGui::ShowDemoWindow();
+			ImGui::Begin("Sample window");	// begin window
+			// Background color edit
+			if (ImGui::ColorEdit3("Background color", inputColor)) {
+				// this code gets called if color value changes, so
+				// the background color is upgraded automatically!
+				bgColor.r = static_cast<char>(inputColor[0] * 255.f);
+				bgColor.g = static_cast<char>(inputColor[1] * 255.f);
+				bgColor.b = static_cast<char>(inputColor[2] * 255.f);
+			}
+
+			// Window title text edit
+			ImGui::InputText("Window title", windowTitle.data(), 255);
+
+			if (ImGui::Button("Update window title")) {
+				// this code gets if user clicks on the button
+				// yes, you could have written if(ImGui::InputText(...))
+				// but I do this to show how buttons work :)
+				window.SetTitle(windowTitle);
+			}
+			ImGui::End();  // end window
 
 			DrawText("move the ball with arrow keys", 10, 10, 20, DARKGRAY);
 
