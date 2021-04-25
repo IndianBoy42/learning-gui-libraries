@@ -5,11 +5,11 @@
 	path = blend2d/blend2d
 	url = https://github.com/blend2d/blend2d
 [submodule "imgui/imgui-plot"]
-	path = imgui/imgui-plot
+	path = sfml/imgui-plot
 	url = https://github.com/soulthreads/imgui-plot.git
 [submodule "imgui/imgui"]
-	path = imgui/imgui
+	path = sfml/imgui
 	url = https://github.com/ocornut/imgui.git
 [submodule "imgui/imgui-sfml"]
-	path = imgui/imgui-sfml
+	path = sfml/imgui-sfml
 	url = https://github.com/eliasdaler/imgui-sfml.git
