@@ -16,6 +16,3 @@
 [submodule "raylib/imgui-impl-raylib"]
 	path = raylib/imgui-impl-raylib
 	url = https://github.com/oswjk/imgui-impl-raylib.git
-[submodule "raylib/autodiff"]
-	path = raylib/autodiff
-	url = https://github.com/autodiff/autodiff.git
