@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/oswjk/imgui-impl-raylib.git
+	branch = master
+	commit = de3a4b463b6193193b0aa8f5aedb5d59bc9843f4
+	parent = a235576840f448c5198218f62810fc24781ffe01
+	method = merge
+	cmdver = 0.4.3
