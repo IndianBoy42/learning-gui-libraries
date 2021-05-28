@@ -16,3 +16,9 @@
 [submodule "raylib/imgui-impl-raylib"]
 	path = raylib/imgui-impl-raylib
 	url = https://github.com/oswjk/imgui-impl-raylib.git
+[submodule "raylib/raylib-cpp"]
+	path = raylib/raylib-cpp
+	url = https://github.com/RobLoach/raylib-cpp.git
+[submodule "raylib/raylib"]
+	path = raylib/raylib
+	url = https://github.com/raysan5/raylib.git
