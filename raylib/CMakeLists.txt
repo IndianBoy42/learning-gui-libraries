@@ -37,7 +37,7 @@ target_include_directories(raylib_play PUBLIC ${OPENGL_INCLUDE_DIRS})
 # target_link_libraries(raylib_play PUBLIC OpenMP::OpenMP_CXX)
 # lots of warnings and all warnings as errors
 target_compile_options(raylib_play PUBLIC -march=native -mtune=native -mavx -mavx2)
-target_compile_options(raylib_play PUBLIC -Wall -Wuninitialized -Wextra -Wpedantic -fconcepts)
+target_compile_options(raylib_play PUBLIC -Wall -Wuninitialized -Wextra -Wpedantic)
 target_link_libraries(raylib_play PUBLIC m pthread)
 target_link_libraries(raylib_play PUBLIC ${OPENGL_LIBRARIES})
 target_compile_options(raylib_play PUBLIC -fopenmp)
